@@ -5,8 +5,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import {
-  ArrowDownRight, ArrowRight, Atom, BookOpen, Check, ChevronDown, Compass,
-  GraduationCap, HeartHandshake, MapPin, Menu, Microscope, Phone, ShieldCheck, X,
+  ArrowRight, Atom, BookOpen, Check, ChevronDown, Compass, GraduationCap,
+  HeartHandshake, Mail, MapPin, Menu, Microscope, Phone, ShieldCheck, X,
 } from 'lucide-react';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 
@@ -129,7 +129,7 @@ function Home() {
 
       <section className="scholarship-section">
         <div className="container scholarship-card">
-          <div className="scholarship-copy"><div className="eyebrow">CPA · ICAD scholarship test</div><h2>Make merit part<br />of the conversation.</h2><p>Ask about CPA, ICAD’s scholarship test. Eligible students may receive fee waivers of up to 90%; current terms and registration details are available from admissions.</p><a className="btn" style={{ background: '#efc46b', color: '#253b44' }} href="#enquiry" data-testid="button-ask-about-cpa">Ask about CPA <ArrowRight size={15} /></a></div>
+          <div className="scholarship-copy"><div className="eyebrow">CPA · ICAD scholarship test</div><h2>Make merit part<br />of the conversation.</h2><p>Ask about CPA, ICAD’s scholarship test. Eligible students may receive fee waivers of up to 90%; current terms and registration details are available from admissions.</p><a className="btn btn-primary" href="#enquiry" data-testid="button-ask-about-cpa">Ask about CPA <ArrowRight size={15} /></a></div>
           <div className="scholarship-visual"><div className="waiver-mark"><strong>up to<br />90%</strong><span>fee waiver</span></div><div className="waiver-foot">Eligibility and terms apply · ask admissions</div></div>
         </div>
       </section>
@@ -137,7 +137,7 @@ function Home() {
       <section className="section places-section" id="centers">
         <div className="container places-layout">
           <div className="places-art" aria-label="ICAD center locations across Maharashtra"><div className="map-orbit orbit-one" /><div className="map-orbit orbit-two" /><div className="map-orbit orbit-three" /><span className="map-node node-nagpur">Nagpur</span><span className="map-node node-amravati">Amravati</span><span className="map-node node-nashik">Nashik</span><span className="map-node node-yavatmal">Yavatmal</span><span className="map-node node-chandrapur">Chandrapur</span><span className="map-node node-nanded">Nanded</span><div className="map-center"><MapPin size={25} /></div></div>
-          <div className="places-copy"><div className="eyebrow">Close to home</div><h2 className="section-title">A classroom<br />within reach.</h2><p className="section-copy">ICAD’s classroom centers span Maharashtra, including its Nagpur head office. Find a location and ask about the programs and batches available there.</p><div className="places-list">{['Nagpur', 'Amravati', 'Chandrapur', 'Yavatmal', 'Nashik', 'Nanded', 'Chhatrapati Sambhaji Nagar'].map((place) => <span key={place}>{place}</span>)}</div><a className="btn btn-quiet" href="https://icad.org.in/" target="_blank" rel="noreferrer" data-testid="link-official-site">Visit the official website <ArrowRight size={15} /></a></div>
+          <div className="places-copy"><div className="eyebrow">Close to home</div><h2 className="section-title">A classroom<br />within reach.</h2><p className="section-copy">ICAD’s classroom centers span Maharashtra, including its Nagpur head office. Find a location and ask about the programs and batches available there.</p><div className="places-list">{['Nagpur', 'Amravati', 'Chandrapur', 'Yavatmal', 'Nashik', 'Nanded', 'Chhatrapati Sambhaji Nagar'].map((place) => <span key={place}>{place}</span>)}</div><a className="btn btn-quiet" href="#enquiry" data-testid="link-center-enquiry">Ask about a center <ArrowRight size={15} /></a></div>
         </div>
       </section>
 
@@ -150,7 +150,7 @@ function Home() {
 
       <section className="enquiry-section" id="enquiry">
         <div className="container enquiry-panel">
-            <div className="enquiry-copy"><div className="eyebrow">Start with a conversation</div><h2 className="section-title">Let’s map the<br />next step.</h2><p>Tell us a little about the student and the goal. The ICAD admissions team can help you explore programs, centers, batches and fees.</p><div className="enquiry-note"><ShieldCheck size={18} /><span>This concept opens an email draft to admissions. Nothing is sent until you review and send it.</span></div></div>
+            <div className="enquiry-copy"><div className="eyebrow">Start with a conversation</div><h2 className="section-title">Let’s map the<br />next step.</h2><p>Tell us a little about the student and the goal. The ICAD admissions team can help you explore programs, centers, batches and fees.</p><div className="enquiry-note"><ShieldCheck size={18} /><span>An email draft will be prepared for admissions. It is sent only after you review and send it.</span></div></div>
           <form className="lead-form" onSubmit={submitEnquiry}>
             <div className="field"><label htmlFor="student-name">Student / parent name</label><input id="student-name" name="name" required placeholder="Your name" data-testid="input-name" /></div>
             <div className="field"><label htmlFor="phone-number">Phone number</label><input id="phone-number" name="phone" type="tel" required minLength={10} placeholder="10-digit mobile number" data-testid="input-phone" /></div>
@@ -168,7 +168,7 @@ function Home() {
           <div className="footer-main">
             <div className="footer-brand"><a className="brand" href="#home" data-testid="link-footer-home"><span className="brand-mark">i</span><span className="brand-text"><strong>ICAD</strong><small>Institute of Career Aspirants</small></span></a><p>Classroom-led preparation for students with big plans—and families helping them get there.</p></div>
             <div className="footer-col"><h4>Explore</h4><div className="footer-links"><a href="#programs">JEE</a><a href="#programs">NEET</a><a href="#programs">MHT-CET</a><a href="#programs">Foundation</a><a href="#approach">Our approach</a><a href="#faq">FAQs</a></div></div>
-            <div className="footer-col"><h4>Connect with ICAD</h4><div className="footer-contact"><a href="tel:+917074347074" data-testid="link-footer-phone"><Phone size={15} /> +91 70743 47074</a><a href="#centers"><MapPin size={15} /> Centers across Maharashtra</a><a href="https://icad.org.in/" target="_blank" rel="noreferrer"><ArrowDownRight size={15} /> icad.org.in</a></div></div>
+            <div className="footer-col"><h4>Connect with ICAD</h4><div className="footer-contact"><a href="tel:+917074347074" data-testid="link-footer-phone"><Phone size={15} /> +91 70743 47074</a><a href="mailto:contact@icadiit.com"><Mail size={15} /> contact@icadiit.com</a><a href="#centers"><MapPin size={15} /> Centers across Maharashtra</a></div></div>
           </div>
           <div className="footer-bottom"><span>© {new Date().getFullYear()} ICAD · Institute of Career Aspirants</span><a href="#home" data-testid="link-back-to-top">Back to top ↑</a></div>
         </div>
