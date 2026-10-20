@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "ICAD Homepage Concept"
+description = "A polished, responsive homepage concept for ICAD coaching institute, helping students and parents explore JEE, NEET, foundation, admissions, scholarships, and local centers."
+version = "1.0.0"
+id = "artifacts/icad-homepage"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25782
+
+[services.development]
+run = "pnpm --filter @workspace/icad-homepage run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/icad-homepage", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/icad-homepage/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25782"
+BASE_PATH = "/"
